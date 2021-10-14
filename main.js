@@ -20,7 +20,7 @@ const error3 = `ERROR: Input includes characters that don't exist in Morse code.
 // regex checks
 const morseCharOnly = /[^./ -]/ // checking for anything that's not a dot, , / space or - 
 
-const spacesOnly = /^\s*$/ //checking if an input value is only spaces
+// const spacesOnly = /^\s*$/ //checking if an input value is only spaces
 
 const notInMorse = /[#^_{}]/  //checking for characters that dont exist in morse code
 
@@ -31,7 +31,7 @@ let error2IsPrinted = false
 let error3IsPrinted = false
 
 
-// check if there is a match for every car from input
+// check if there is a match for every char from input
 
 const isSequenceValid = (word) => {
     const arr = word.trim().split(" ")
@@ -43,13 +43,6 @@ const isSequenceValid = (word) => {
              return true
     }
 }
-
-const word1 = ". ........ "
-const word2 = ". .."
-
-console.log(word1.trim().split(" "))
-console.log(isSequenceValid(word2))
-console.log(isSequenceValid(word1))
 
 morseIn.addEventListener('input',()=>{
     console.log(morse.value)
@@ -89,7 +82,11 @@ morseIn.addEventListener('input',()=>{
 });
 
 
+
+
 latin.addEventListener('input',()=>{
+
+
     if(error3IsPrinted === false && notInMorse.test(latin.value)){
         latinError.innerText = error3
         error3IsPrinted = true
