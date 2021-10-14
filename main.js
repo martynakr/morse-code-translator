@@ -24,11 +24,32 @@ const spacesOnly = /^\s*$/ //checking if an input value is only spaces
 
 const notInMorse = /[#^_{}]/  //checking for characters that dont exist in morse code
 
-const invalidSeq = /[]/ //checking if input includes an invalid sequence 
+ 
 // error states
 let error1IsPrinted = false
 let error2IsPrinted = false
 let error3IsPrinted = false
+
+
+// check if there is a match for every car from input
+
+const isSequenceValid = (word) => {
+    const arr = word.trim().split(" ")
+    console.log(arr)
+    const matches = arr.map(n => flipped[n])
+        if(matches.indexOf(undefined)> -1) {
+            return false
+        } else {
+             return true
+    }
+}
+
+const word1 = ". ........ "
+const word2 = ". .."
+
+console.log(word1.trim().split(" "))
+console.log(isSequenceValid(word2))
+console.log(isSequenceValid(word1))
 
 morseIn.addEventListener('input',()=>{
     console.log(morse.value)
@@ -39,7 +60,7 @@ morseIn.addEventListener('input',()=>{
     }
    
     // if morse code input includes something other than morse code symbols
-    if(morseCharOnly.test(morse.value) && error1IsPrinted === false) {
+    if(morseCharOnly.test(morseIn.value) && error1IsPrinted === false) {
         console.log(morseCharOnly.test(morseIn.value))
         morseError.innerText= error1
         error1IsPrinted = true
@@ -51,20 +72,20 @@ morseIn.addEventListener('input',()=>{
     }
 
 
-    // if input includesd something that doesnt match the object key
-//     if((Object.values(morse).indexOf(morseIn.value) < 0 && morseIn.value !== "")) {
-//         morseError.innerText = error2
-//         error2IsPrinted = true
-//    }
 
-//    if((!Object.values(morse).indexOf(morseIn.value) < 0 && error2IsPrinted === true)) {
-//     morseError.innerText = ""
-//     error2IsPrinted = false
-// }
+    if(morseIn.value !== "" && !isSequenceValid(morseIn.value) && !morseCharOnly.test(morseIn.value)) {
+        morseError.innerText = error2
+        error2IsPrinted = true
+   }
+
+   if(isSequenceValid(morseIn.value) && error2IsPrinted === true) {
+    morseError.innerText = ""
+    error2IsPrinted = false
+}
 
       
     latin.value = toLatin(morseIn.value)
-    console.log(Object.values(flipped).indexOf(morseIn.value))
+   
 });
 
 
@@ -81,4 +102,9 @@ latin.addEventListener('input',()=>{
     
     morseIn.value = toMorseCode(latin.value)
 });
+
+
+
+
+
 
