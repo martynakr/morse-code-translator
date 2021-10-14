@@ -8,6 +8,10 @@ $col: #1d9b88;
 	padding: 0;
 }
 
+body {
+	background-color: #f5fff8;
+}
+
 h1 {
 	font-family: "Secular One", sans-serif;
 	font-weight: 700;
@@ -50,9 +54,9 @@ h2 {
 
 	&__alphabet {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 		grid-template-rows: 1fr 1fr 1fr 1fr;
-
+		gap: 10px;
 		margin-bottom: 45px;
 		flex-wrap: wrap;
 
@@ -90,9 +94,9 @@ textarea {
 	max-width: 100%;
 	font-family: "Lato", sans-serif;
 	padding: 10px;
-	font-size: 16px;
+	font-size: 20px;
 	// margin: 20px;
-	margin-bottom: 45px;
+	margin-bottom: 30px;
 
 	&:active {
 		border: 1px solid $col;
@@ -102,20 +106,20 @@ textarea {
 p {
 	font-family: "Secular One", sans-serif;
 	color: $col;
-	font-size: 25px;
+	font-size: 18px;
 }
 
 .alphabet-chart__letter {
 	font-family: "Secular One", sans-serif;
 	color: $col;
-	font-size: 40px;
+	font-size: 25px;
 	font-weight: bold;
 }
 
 .text-area__input {
 	display: flex;
 	flex-direction: column;
-	width: 45%;
+	width: 49%;
 
 	@include mixins.landscape-tablet-and-smaller {
 		width: 90%;
@@ -123,6 +127,21 @@ p {
 }
 
 .container__alphabet > p {
-	padding: 5px;
-	// border: 1px solid $col;
+	padding: 10px;
+	border: 1px solid $col;
+	border-radius: 4px;
+}
+
+.error-morse,
+.error-latin {
+	color: #f56e00;
+}
+
+h3 {
+	font-family: "Secular One", sans-serif;
+	color: $col;
+	font-size: 20px;
+	font-weight: 400;
+	text-transform: uppercase;
+	margin-bottom: 20px;
 }
