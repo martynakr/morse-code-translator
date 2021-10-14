@@ -1,6 +1,6 @@
-import {toMorseCode} from "./to-morse-code.js"
-import {toLatin} from "./to-latin.js"
-import morse, {flipped} from "./morse-object.js"
+import {toMorseCode} from "./toMorseCode/to-morse-code.js"
+import {toLatin} from "./toLatin/to-latin.js"
+import morse, {flipped} from "./data/morse-object.js"
 
 const latin = document.querySelector("#latin")
 const morseIn = document.querySelector("#morse")
@@ -52,15 +52,15 @@ morseIn.addEventListener('input',()=>{
 
 
     // if input includesd something that doesnt match the object key
-    if((Object.values(morse).indexOf(morseIn.value) < 0 && morseIn.value !== "")) {
-        morseError.innerText = error2
-        error2IsPrinted = true
-   }
+//     if((Object.values(morse).indexOf(morseIn.value) < 0 && morseIn.value !== "")) {
+//         morseError.innerText = error2
+//         error2IsPrinted = true
+//    }
 
-   if((!Object.values(morse).indexOf(morseIn.value) < 0 && error2IsPrinted === true)) {
-    morseError.innerText = ""
-    error2IsPrinted = false
-}
+//    if((!Object.values(morse).indexOf(morseIn.value) < 0 && error2IsPrinted === true)) {
+//     morseError.innerText = ""
+//     error2IsPrinted = false
+// }
 
       
     latin.value = toLatin(morseIn.value)
@@ -79,6 +79,6 @@ latin.addEventListener('input',()=>{
         error3IsPrinted = false
     }
     
-    morse.value = toMorseCode(latin.value)
+    morseIn.value = toMorseCode(latin.value)
 });
 

@@ -1,4 +1,4 @@
-import morse, {flipObj} from "./morse-object.js"
+import morse, {flipObj} from "../data/morse-object.js"
 
 export const toLatin = (word) => {
 
@@ -11,3 +11,4 @@ export const toLatin = (word) => {
     return arrOfChars.map(char => {
         return lat[char] }).join("")
 }
+

@@ -1,4 +1,4 @@
-import { toLatin } from "./to-latin.js";
+import { toLatin } from "../to-latin.js";
 
 describe("Test cases for morseCode function that translates morse code characters to latin alphabet", () => {
 

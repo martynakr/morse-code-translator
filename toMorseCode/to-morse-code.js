@@ -1,4 +1,4 @@
-import morse from "./morse-object.js"
+import morse from "../data/morse-object.js"
 
 export const toMorseCode = (word) => {
     const noMultiSpace = word.replace(/\s\s+/g, ' ');
