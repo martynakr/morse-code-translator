@@ -1,4 +1,4 @@
-import { toLatin } from "../to-latin.js";
+import { toLatin } from "./to-latin.js";
 
 describe("Test cases for morseCode function that translates morse code characters to latin alphabet", () => {
 
@@ -13,7 +13,7 @@ describe("Test cases for morseCode function that translates morse code character
     });
 
     it("should convert / into a single space", () => {
-        expect(toLatin("")).toBe("");
+        expect(toLatin("/")).toBe(" ");
     });
 
     // it("should throw a new error if anything other than .,  -, / or space is passed", () => {

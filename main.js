@@ -1,6 +1,8 @@
 import {toMorseCode} from "./toMorseCode/to-morse-code.js"
 import {toLatin} from "./toLatin/to-latin.js"
-import morse, {flipped} from "./data/morse-object.js"
+import {isSequenceValidLat} from "./toMorseCode/is-seq-valid-latin.js"
+import {isSequenceValid, spacesOnly} from "./toLatin/is-seq-valid-morse.js"
+import morse from "./data/morse-object.js"
 
 const latin = document.querySelector("#latin")
 const morseIn = document.querySelector("#morse")
@@ -20,9 +22,8 @@ const error3 = `ERROR: Input includes characters that don't exist in Morse code.
 // regex checks
 const morseCharOnly = /[^./ -]/ // checking for anything that's not a dot, , / space or - 
 
-// const spacesOnly = /^\s*$/ //checking if an input value is only spaces
 
-const notInMorse = /[#^_{}]/  //checking for characters that dont exist in morse code
+// const notInMorse = /[#^_{}]/  //checking for characters that dont exist in morse code
 
  
 // error states
@@ -33,16 +34,8 @@ let error3IsPrinted = false
 
 // check if there is a match for every char from input
 
-const isSequenceValid = (word) => {
-    const arr = word.trim().split(" ")
-    console.log(arr)
-    const matches = arr.map(n => flipped[n])
-        if(matches.indexOf(undefined)> -1) {
-            return false
-        } else {
-             return true
-    }
-}
+
+
 
 morseIn.addEventListener('input',()=>{
     console.log(morse.value)
@@ -87,15 +80,21 @@ morseIn.addEventListener('input',()=>{
 latin.addEventListener('input',()=>{
 
 
-    if(error3IsPrinted === false && notInMorse.test(latin.value)){
+    if(error3IsPrinted === false && !isSequenceValidLat(latin.value)){
         latinError.innerText = error3
         error3IsPrinted = true
         }
 
-    if(error3IsPrinted === true && !notInMorse.test(latin.value)){
+    // if(error3IsPrinted === true && !notInMorse.test(latin.value)){
+    //     latinError.innerText = ""
+    //     error3IsPrinted = false
+    // }
+
+    
+    if(error3IsPrinted === true && isSequenceValidLat(latin.value)){
         latinError.innerText = ""
         error3IsPrinted = false
-    }
+        }
     
     morseIn.value = toMorseCode(latin.value)
 });
