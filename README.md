@@ -1,7 +1,7 @@
 # Morse Code Translator
 A website that allows to translate latin characters into Morse code and Morse code into latin alphabet. The project was created using Test Driven Development process.
 
-[Live Page]()
+[Live Page](https://martynakr.github.io/morse-code-translator/)
 
 ## Topics learned
 - Using Javascript Objects and iterating through them
