@@ -16,56 +16,25 @@
     </header>
     <section id = "translator">
         <div class = "container container__text-area">
-            <div class = "text-area__input">
+            <div class = "text-area__input text-area__input--latin">
                 <label for="latin">LATIN ALPHABET</label>
-                <textarea name="" id="latin" style="height:300px" placeholder="Enter your text in Latin alphabet here"></textarea></div>
-            <div class = "text-area__input">
-                <label for="latin">MORSE CODE</label>
-                <textarea name="" id="morse" style="height:300px" placeholder="Enter your text in Morse code here"></textarea></div>
+                <textarea name="" id="latin" style="height:300px" placeholder="Enter your text in Latin alphabet here"></textarea>
+                <p class = "error-latin"></p>
+            </div>
+            <div class = "text-area__input text-area__input--morse">
+                <label for="morse">MORSE CODE</label>
+                <textarea name="" id="morse" style="height:300px" placeholder="Enter your text in Morse code here"></textarea>
+                <p class = "error-morse"></p>
+            </div>
         </div>
     </section>
-    <section id = "alphabet-chart">
-        <div class = "container container__alphabet">
-            <!-- <div class= "container__alphabet--part"> -->
-                <p>A  <span class = "alphabet-chart__letter"><span>.-</span></p>
-                <p>B  <span class = "alphabet-chart__letter">-...</span></p>
-                <p>C  <span class = "alphabet-chart__letter">-.-.</span></p>
-                <p>D  <span class = "alphabet-chart__letter">-..</span></p>
-            <!-- </div>
-            <div class= "container__alphabet--part"> -->
-                <p>E  <span class = "alphabet-chart__letter">.</span></p>
-                <p>F  <span class = "alphabet-chart__letter">..-.</span></p>
-                <p>G  <span class = "alphabet-chart__letter">--.</span></p>
-                <p>H  <span class = "alphabet-chart__letter">....</span></p>
-            <!-- </div>
-            <div class= "container__alphabet--part"> -->
-                <p>I  <span class = "alphabet-chart__letter">..</span></p>
-                <p>J  <span class = "alphabet-chart__letter">.---</span></p>
-                <p>K  <span class = "alphabet-chart__letter">-.-</span></p>
-                <p>L  <span class = "alphabet-chart__letter">.-..</span></p>
-            <!-- </div>
-            <div class= "container__alphabet--part"> -->
-                <p>M  <span class = "alphabet-chart__letter">--</span></p>
-                <p>N  <span class = "alphabet-chart__letter">-.</span></p>
-                <p>O  <span class = "alphabet-chart__letter">---</span></p>
-                <p>P  <span class = "alphabet-chart__letter">.--.</span></p>
-            <!-- </div>
-            <div class= "container__alphabet--part"> -->
-                <p>Q  <span class = "alphabet-chart__letter">--.-</span></p>
-                <p>R  <span class = "alphabet-chart__letter">.-.</span></p>
-                <p>S  <span class = "alphabet-chart__letter">...</span></p>
-                <p>T  <span class = "alphabet-chart__letter">-</span></p>
-            <!-- </div>
-            <div class= "container__alphabet--part"> -->
-                <p>U  <span class = "alphabet-chart__letter">..-</span></p>
-                <p>V  <span class = "alphabet-chart__letter">...-</span></p>
-                <p>W  <span class = "alphabet-chart__letter">.--</span></p>
-                <p>X  <span class = "alphabet-chart__letter">-..-</span></p>
-            <!-- </div>
-            <div class= "container__alphabet--part"> -->
-                <p>Y  <span class = "alphabet-chart__letter">-.--</span></p>
-                <p>Z  <span class = "alphabet-chart__letter">--..</span></p>
-    <!-- </div> -->
+    <section id = "alphabet-chart" >
+        <div class = "container">
+            <h3>All Morse code characters</h3>
+            <div class= "container__alphabet">
+            </div>  
+        </div>
     </section>
+    <script type="module" src = "main.js"></script>
 </body>
 </html>

@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Secular+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f5fff8;
+}
+
+h1 {
+  font-family: "Secular One", sans-serif;
+  font-weight: 700;
+  font-size: 45px;
+  color: #1d9b88;
+  margin: 15px;
+  margin-top: 45px;
+}
+@media only screen and (max-width: 576px) {
+  h1 {
+    font-size: 35px;
+  }
+}
+
+h2 {
+  font-family: "Secular One", sans-serif;
+  background-color: #1d9b88;
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 35px;
+  border-radius: 10px;
+}
+@media only screen and (max-width: 576px) {
+  h2 {
+    font-size: 25px;
+  }
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+.container__text-area {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+@media only screen and (max-width: 992px) {
+  .container__text-area {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.container__alphabet {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 45px;
+  flex-wrap: wrap;
+}
+@media only screen and (max-width: 1200px) {
+  .container__alphabet {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .container__alphabet {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.header-title {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+label {
+  font-family: "Secular One", sans-serif;
+  color: #1d9b88;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+textarea {
+  resize: none;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  font-family: "Lato", sans-serif;
+  padding: 10px;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+textarea:active {
+  border: 1px solid #1d9b88;
+}
+
+p {
+  font-family: "Secular One", sans-serif;
+  color: #1d9b88;
+  font-size: 18px;
+}
+
+.alphabet-chart__letter {
+  font-family: "Secular One", sans-serif;
+  color: #1d9b88;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.text-area__input {
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+}
+@media only screen and (max-width: 992px) {
+  .text-area__input {
+    width: 90%;
+  }
+}
+
+.container__alphabet > p {
+  padding: 10px;
+  border: 1px solid #1d9b88;
+  border-radius: 4px;
+}
+
+.error-morse,
+.error-latin {
+  color: #f56e00;
+}
+
+h3 {
+  font-family: "Secular One", sans-serif;
+  color: #1d9b88;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
