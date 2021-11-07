@@ -17,17 +17,19 @@ const morse =
         '-': '-....-',    '_': '..--.-',    '"': '.-..-.',
         '$': '...-..-',   '!': '-.-.--',    '@': '.--.-.',
         ' ': '/',
-    };
+};
 
 
-   export const flipObj = (obj) => {
-        const flipped = {}
-        Object.keys(obj).forEach(key => {
-            flipped[obj[key]] = key
-        })
-        return flipped;
+export const flipObj = (obj) => {
+    const flipped = {}
+    Object.entries(obj).forEach(entry => {
+        let key = entry[0];
+        let value = entry[1];
+        flipped[value] = key;
+    })
+    return flipped;
     }
 
-    export const flipped = flipObj(morse)
+export const flipped = flipObj(morse)
     
-    export default morse;
+export default morse;

@@ -20,9 +20,6 @@ describe("Test cases for toMorseCode function that translates latin characters t
         expect(toMorseCode("I love coding")).toBe(".. / .-.. --- ...- . / -.-. --- -.. .. -. --.");
     });
 
-    it(`should return "" for every character that doesn't exist in morse code`, () => {
-        expect(toMorseCode("#")).toBe("");
-    });
 
     it("should not be case sensitive", () => {
         expect(toMorseCode("M")===toMorseCode("m")).toBe(true)
@@ -33,6 +30,12 @@ describe("Test cases for toMorseCode function that translates latin characters t
         expect(toMorseCode("apple   juice")).toBe(".- .--. .--. .-.. . / .--- ..- .. -.-. .");
         expect(toMorseCode("milk  chocolate   with     toffee")).toBe("-- .. .-.. -.- / -.-. .... --- -.-. --- .-.. .- - . / .-- .. - .... / - --- ..-. ..-. . .");
     });
+
+    it("should throw a new error if an untranslatable character is passed", () => {
+        const notInMorse = new Error(`ERROR: Input includes characters that don't exist in Morse code.`);
+
+        expect(() => toMorseCode("abcdef^")).toThrowError(notInMorse);
+        });
 
 
 });

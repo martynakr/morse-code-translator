@@ -1,7 +1,7 @@
 import morse from "../data/morse-object.js"
 
 export const isSequenceValidLat = (word) => {
-    const arr = word.trim().split("")
+    const arr = word.trim().toLowerCase().split("")
     console.log(arr)
     const matches = arr.map(n => morse[n])
     console.log(matches)
@@ -9,5 +9,5 @@ export const isSequenceValidLat = (word) => {
             return false
         } else {
              return true
-    }
+        }
 }
